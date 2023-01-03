@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  connection: local
+  become: true
+  pre_tasks:
+    - name: Update packages
+        apk:
+          update_cache: true
+          upgrade: true
+
+  tasks:
+    - name: Install NodeJS/NPM
+      apk:
+        name: nodejs,npm
