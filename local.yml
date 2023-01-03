@@ -14,7 +14,12 @@
         name: nodejs,npm
     - name: Install homebridge
       npm:
-        name: homebridge,homebridge-config-ui-x
+        name: homebridge
+        global: true
+        unsafe_perm: true
+    - name: Install homebridge-config-ui-x
+      npm:
+        name: homebridge-config-ui-x
         global: true
         unsafe_perm: true
     - name: Copy homebridge service file
