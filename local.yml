@@ -12,3 +12,24 @@
     - name: Install NodeJS/NPM
       apk:
         name: nodejs,npm
+    - name: Install homebridge
+      npm:
+        name: homebridge,homebridge-config-ui-x
+        global: true
+        unsafe_perm: true
+    - name: Copy homebridge service file
+      copy:
+        src: homebridge
+        dest: /etc/init.d/homebridge
+        owner: root
+        group: root
+        mode: '0755'
+    - name: Copy homebridge config file
+      copy:
+        src: config.json
+        dest: /homebridge/config.json
+        owner: root
+        group: root
+        mode: '0755'
+    - name: Enable homebridge service on boot
+      command: /sbin/rc-update add homebridge default

@@ -1,0 +1,7 @@
+#!/sbin/openrc-run
+name="homebridge"
+command="/usr/local/bin/hb-service"
+command_args="run --allow-root -I -U /homebridge"
+command_background=true
+pidfile="/run/${RC_SVCNAME}.pid"
+retry=10
