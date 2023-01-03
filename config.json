@@ -1,8 +1,10 @@
-"platforms": [
+{
+  "platforms": [
     {
       "platform": "config",
       "name": "Config",
       "port": 8080,
       "sudo": false
     }
-]
+  ]
+}
