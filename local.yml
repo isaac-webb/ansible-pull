@@ -12,6 +12,9 @@
     - name: Install NodeJS/NPM
       apk:
         name: nodejs,npm
+    - name: Install sudo
+      apk:
+        name: sudo
     - name: Install homebridge
       npm:
         name: homebridge
